@@ -1,0 +1,29 @@
+# Python
+backend/venv/
+backend/__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# SQLite
+backend/db.sqlite3
+
+# Media uploads
+backend/media/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Node modules (frontend)
+frontend/node_modules/
+
+# Build output
+frontend/dist/
