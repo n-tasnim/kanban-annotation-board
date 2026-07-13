@@ -9,7 +9,7 @@ import '../lib/api';
 import { Calendar, ChevronLeft, ChevronRight, LogOut, Plus, X } from 'lucide-react';
 import type { Priority, Status, Task } from '../types/task';
 
-const API_BASE = 'http://localhost:8000/api/tasks'; 
+const API_BASE = 'https://ntasnim.pythonanywhere.com/api/tasks'; 
 
 export default function Tasks() {
   const logout = useAuthStore((state) => state.logout);

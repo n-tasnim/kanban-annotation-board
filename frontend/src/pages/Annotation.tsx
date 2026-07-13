@@ -23,7 +23,7 @@ export default function Annotation() {
     const fetchImages = async () => {
         if (!token) return;
         try {
-            const response = await axios.get("http://localhost:8000/api/annotation/images/", {
+            const response = await axios.get("https://ntasnim.pythonanywhere.com/api/annotation/images/", {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setImages(response.data);
@@ -103,7 +103,7 @@ function ViewerPane({ title, viewType, images, onUpdate }: { title: string; view
     const savePolygon = async (pointsToSave: number[][]) => {
         if (!currentImage) return;
         try {
-            await axios.post("http://localhost:8000/api/annotation/polygons/", 
+            await axios.post("https://ntasnim.pythonanywhere.com/api/annotation/polygons/", 
                 { image: currentImage.id, points: pointsToSave, type: viewType },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -117,7 +117,7 @@ function ViewerPane({ title, viewType, images, onUpdate }: { title: string; view
     const deleteSpecificPolygon = async (e: React.MouseEvent, polyId: number) => {
         e.stopPropagation(); 
         try {
-            await axios.delete(`http://localhost:8000/api/annotation/polygons/${polyId}/`, {
+            await axios.delete(`https://ntasnim.pythonanywhere.com/api/annotation/polygons/${polyId}/`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             onUpdate();
@@ -127,7 +127,7 @@ function ViewerPane({ title, viewType, images, onUpdate }: { title: string; view
     const deleteImage = async () => {
         if (!currentImage) return; 
         try {
-            await axios.delete(`http://localhost:8000/api/annotation/images/${currentImage.id}/`, {
+            await axios.delete(`https://ntasnim.pythonanywhere.com/api/annotation/images/${currentImage.id}/`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setSliceIndex(0);
@@ -142,7 +142,7 @@ function ViewerPane({ title, viewType, images, onUpdate }: { title: string; view
         formData.append("type", viewType); 
 
         try {
-            await axios.post("http://localhost:8000/api/annotation/images/", formData, {
+            await axios.post("https://ntasnim.pythonanywhere.com/api/annotation/images/", formData, {
                 headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data" },
             });
             onUpdate();
@@ -229,7 +229,7 @@ function ViewerPane({ title, viewType, images, onUpdate }: { title: string; view
                         onClick={handleCanvasClick}
                     >
                         <img 
-                            src={`http://localhost:8000${currentImage.image}`} 
+                            src={`https://ntasnim.pythonanywhere.com${currentImage.image}`} 
                             alt="Scan" 
                             className="max-w-full max-h-full block pointer-events-none select-none" 
                             draggable={false}
