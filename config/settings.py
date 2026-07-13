@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-47^fkevmt61dpszm9f=am1+1mh#erh6=ndu@+q2+&!(@mu6ij_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["ntasnim.pythonanywhere.com"]
+ALLOWED_HOSTS = ["localhost",
+                "127.0.0.1",
+                "ntasnim.pythonanywhere.com"]
 
 
 # Application definition
@@ -58,6 +60,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://kanban-annotation-board.vercel.app"
 ]
 
 MEDIA_URL = "/media/"
