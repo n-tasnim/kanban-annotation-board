@@ -1,6 +1,6 @@
 # Kanban Annotation Board
 
-This is the backend and frontend of the VaiRadiology assessment project. This web app combines kanban-style clinical task management and image annotation. It is built using Django REST Framework, React.js, TypeScript and Tailwind CSS. 
+This is the backend and frontend of an assessment project. This web app combines kanban-style clinical task management and image annotation. It is built using Django REST Framework, React.js, TypeScript and Tailwind CSS. 
 
 ## Environment Requirements
 
